@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biglietti</title>
+</head>
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: burlywood;
+        text-align: center;
+        padding: 20px;
+    }
+    .form-container {
+        background-color: blanchedalmond;
+        padding: 20px;
+        width: 60%;
+        margin: auto;
+        border-radius: 10px;
+    }
+    h1 {
+        color: rgb(255, 161, 47);
+    }
+    .hidden {
+        display: none;
+    }
+    label {
+        display: block;
+        margin-top: 10px;
+    }
+    input, select {
+        width: 80%;
+        padding: 8px;
+        margin-top: 5px;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        background-color: #f0ad4e;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #ec971f;
+    }
+</style>
+
+<body>
+    <body>
+
+        <div class="form-container">
+            <h1>Compra qui il tuo biglietto!</h1>
+    
+            <form action="gestioneAcquisto.php" method="POST" id="formAcquisto">
+    
+                <div class="section">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+    
+                <div class="section">
+                    <label for="cognome">Cognome:</label>
+                    <input type="text" id="cognome" name="cognome" required>
+                </div>
+    
+                <div class="section">
+                    <label for="codice_fiscale">Codice Fiscale:</label>
+                    <input type="text" id="codice_fiscale" name="codice_fiscale" required>
+                </div>
+    
+                <div class="section">
+                    <label for="settore">Settore:</label>
+                    <select id="settore" name="settore" required>
+                        <option value="curva">Curva (30€)</option>
+                        <option value="tribuna_centrale">Tribuna Centrale (80€)</option>
+                        <option value="tribuna_donore">Tribuna d'Onore (120€)</option>
+                    </select>
+                </div>
+    
+             
+                <div class="section">
+                    <label for="codice_sconto">Codice Sconto (opzionale):</label>
+                    <input type="text" id="codice_sconto" name="codice_sconto">
+                </div>
+    
+                <div class="section">
+                    <label>Tipo di acquisto:</label><br>
+                    <input type="radio" id="biglietto_unico" name="tipo_biglietto" value="unico" checked> Biglietto Unico<br>
+                    <input type="radio" id="piu_biglietti" name="tipo_biglietto" value="multiplo"> Più Biglietti
+                </div>
+    
+    
+                <div id="aggiuntivi" class="hidden">
+                    <div class="section">
+                        <label for="agg1">Codice Fiscale Aggiuntivo:</label>
+                        <input type="text" id="agg1" name="agg1">
+                    </div>
+                    <div class="section">
+                        <label>Numero Biglietti Aggiuntivi:</label>
+                        <button type="button" id="decrementa">-</button>
+                        <input type="number" id="num_biglietti_agg" value="1" readonly>
+                        <button type="button" id="incrementa">+</button>
+                    </div>
+                </div>
+    
+                <button type="submit">Acquista</button>
+            </form>
+        </div>
+    
+</body>
+</html>
